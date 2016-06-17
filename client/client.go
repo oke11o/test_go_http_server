@@ -32,7 +32,6 @@ func run(wg *sync.WaitGroup, method, url string) {
 	client := &http.Client{}
 	defer wg.Done()
 	req, err := http.NewRequest(method, url, nil)
-	req.SetBasicAuth("admin", "123321")
 	response, err := client.Do(req)
 	if err != nil {
 		fmt.Println(err)
